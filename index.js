@@ -56,6 +56,14 @@ const loadQuiz = async () => {
   displayQuiz(quizData);
 };
 
+// const getResultDetails = ()=>{
+//   let results = [];
+//   const storage = localStorage.getItem('results');
+//   if(storage){
+//       results = JSON.parse(storage);
+//   }
+//   return results;
+// }
 // Displaying quiz on quiz page
 const displayQuiz = (data) => {
   
@@ -117,7 +125,22 @@ document.querySelector("#submit").addEventListener('click', () => {
   }
 
   // data setting on local storage and getting data from local storage
-  let storage = JSON.parse(localStorage.getItem("result"));
+
+
+
+//   const results = getResultDetails();
+  
+//   const resultsStr = JSON.stringify([...results,  {
+//     marks: totalMark,
+//     examTime: timeTaken.innerText,
+//     status: grade.status,
+//   },
+// ]);
+//   localStorage.setItem('results', resultsStr) ;
+
+
+// previous code
+  let storage = JSON.parse(localStorage.getItem("results"));
   if (storage) {
     localStorage.setItem(
       "results",
@@ -192,3 +215,4 @@ document.querySelector("#submit").addEventListener('click', () => {
   }, 1500);
   window.scrollTo(0, 0);
 });
+
